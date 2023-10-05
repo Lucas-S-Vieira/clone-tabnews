@@ -1,0 +1,103 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 07bcd3c..b9217c6 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,2 +1,3 @@[m
+ # clone-tabnews[m
+[32m+[m
+ Teste e pratica com programação[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex f4b5e25..f6d6f9a 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -12,6 +12,9 @@[m
+         "next": "^13.1.6",[m
+         "react": "^18.2.0",[m
+         "react-dom": "^18.2.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "devDependencies": {[m
+[32m+[m[32m        "prettier": "^3.0.3"[m
+       }[m
+     },[m
+     "node_modules/@next/env": {[m
+[36m@@ -358,6 +361,21 @@[m
+         "node": "^10 || ^12 || >=14"[m
+       }[m
+     },[m
+[32m+[m[32m    "node_modules/prettier": {[m
+[32m+[m[32m      "version": "3.0.3",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.0.3.tgz",[m
+[32m+[m[32m      "integrity": "sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==",[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "bin": {[m
+[32m+[m[32m        "prettier": "bin/prettier.cjs"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=14"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "funding": {[m
+[32m+[m[32m        "url": "https://github.com/prettier/prettier?sponsor=1"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "node_modules/react": {[m
+       "version": "18.2.0",[m
+       "resolved": "https://registry.npmjs.org/react/-/react-18.2.0.tgz",[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 56b5d36..824f828 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -4,7 +4,9 @@[m
+   "description": "Teste e pratica com programação",[m
+   "main": "index.js",[m
+   "scripts": {[m
+[31m-    "dev": "next dev"[m
+[32m+[m[32m    "dev": "next dev",[m
+[32m+[m[32m    "lint:check": "prettier --check .",[m
+[32m+[m[32m    "lint:fix": "prettier --write ."[m
+   },[m
+   "author": "",[m
+   "license": "MIT",[m
+[36m@@ -12,5 +14,8 @@[m
+     "next": "^13.1.6",[m
+     "react": "^18.2.0",[m
+     "react-dom": "^18.2.0"[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "devDependencies": {[m
+[32m+[m[32m    "prettier": "^3.0.3"[m
+   }[m
+ }[m
+[1mdiff --git a/pages/index.js b/pages/index.js[m
+[1mindex ee53a08..7479f09 100644[m
+[1m--- a/pages/index.js[m
+[1m+++ b/pages/index.js[m
+[36m@@ -1,10 +1,23 @@[m
+ function Home() {[m
+[31m-    return <><h1>Meu amor</h1>[m
+[31m-    <p>Eu te amo e tenho certeza que todos seus objetivos serão alcançados, numa das aulas do meu curso surgiu um desafio.</p>[m
+[31m-    <p>Criar uma pagina na internet com uma frase para alguem, primeira pessoa que veio em minha mente foi você.</p>[m
+[31m-    <p>Eu queria falar tantas coisas mas vou resumir a, Eu te amo Sara!</p>[m
+[31m-    <h2>Você é o amor da minha vida!</h2>[m
+[32m+[m[32m  return ([m
+[32m+[m[32m    <>[m
+[32m+[m[32m      <h1>Meu amor</h1>[m
+[32m+[m[32m      <p>[m
+[32m+[m[32m        Eu te amo e tenho certeza que todos seus objetivos serão alcançados,[m
+[32m+[m[32m        numa das aulas do meu curso surgiu um desafio.[m
+[32m+[m[32m      </p>[m
+[32m+[m[32m      <p>[m
+[32m+[m[32m        Criar uma pagina na internet com uma frase para alguem, primeira pessoa[m
+[32m+[m[32m        que veio em minha mente foi você.[m
+[32m+[m[32m      </p>[m
+[32m+[m[32m      <p>Eu queria falar tantas coisas mas vou resumir a, Eu te amo Sara!</p>[m
+[32m+[m[32m      <h2>Você é o amor da minha vida!</h2>[m
+     </>[m
+[32m+[m[32m  );[m
+ }[m
+ [m
+[31m-export default Home[m
+\ No newline at end of file[m
+[32m+[m[32mfunction teste() {[m
+[32m+[m[32m  console.log("teste");[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mexport default Home;[m
